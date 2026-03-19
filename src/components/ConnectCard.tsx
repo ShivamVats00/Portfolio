@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin } from "lucide-react";
 
 const links = [
-  { icon: <Github size={24} />, name: "GitHub", handle: "@shivamvats_xyz", href: "https://github.com", color: "text-white", glow: "hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]" },
-  { icon: <Twitter size={24} />, name: "Twitter", handle: "@shivamvats_xyz", href: "https://twitter.com", color: "text-[#1DA1F2]", glow: "hover:shadow-[0_0_15px_rgba(29,161,242,0.4)]" },
-  { icon: <Linkedin size={24} />, name: "LinkedIn", handle: "in/shivamvats", href: "https://linkedin.com", color: "text-[#0A66C2]", glow: "hover:shadow-[0_0_15px_rgba(10,102,194,0.4)]" },
+  { icon: <Github size={24} />, name: "GitHub", handle: "@shivamvats_xyz", href: "https://github.com", color: "text-white", glow: "hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]" },
+  { icon: <Twitter size={24} />, name: "Twitter", handle: "@shivamvats_xyz", href: "https://twitter.com", color: "text-[#1DA1F2]", glow: "hover:shadow-[0_0_20px_rgba(29,161,242,0.8)]" },
+  { icon: <Linkedin size={24} />, name: "LinkedIn", handle: "in/shivamvats", href: "https://linkedin.com", color: "text-[#0A66C2]", glow: "hover:shadow-[0_0_20px_rgba(10,102,194,0.8)]" },
 ];
 
 export default function ConnectCard() {
   return (
     <motion.section 
+      id="contact"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5 }}
