@@ -27,7 +27,7 @@ export default function Header() {
 
       <div className="flex items-center gap-4">
         <motion.a
-          href="/cv.pdf"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
