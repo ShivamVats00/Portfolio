@@ -2,15 +2,22 @@
 
 import { motion } from "framer-motion";
 import { GitHubCalendar } from "react-github-calendar";
+import { useState, useEffect } from "react";
 
 export default function GithubActivity() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const explicitTheme = {
     light: ['#ebedf0', '#e0f2fe', '#bae6fd', '#38bdf8', '#00f3ff'],
     dark: ['#171717', '#083344', '#0e7490', '#06b6d4', '#00f3ff'],
   };
 
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.3 }}
@@ -24,15 +31,21 @@ export default function GithubActivity() {
       </div>
 
       <div className="bg-neutral-950 p-4 md:p-6 rounded-xl border border-neutral-800 flex justify-center overflow-x-auto min-w-full">
-        <div className="flex min-w-max">
-          <GitHubCalendar 
-            username="shivamvats" 
-            colorScheme="dark"
-            theme={explicitTheme}
-            blockSize={12}
-            blockMargin={4}
-            fontSize={12}
-          />
+        <div className="flex min-w-max min-h-[150px] items-center justify-center">
+          {mounted ? (
+            <GitHubCalendar
+              username="shivamvats"
+              colorScheme="dark"
+              theme={explicitTheme}
+              blockSize={12}
+              blockMargin={4}
+              fontSize={12}
+            />
+          ) : (
+            <div className="w-full text-center text-neutral-500 font-mono text-sm py-10">
+              Loading calendar...
+            </div>
+          )}
         </div>
       </div>
     </motion.section>
